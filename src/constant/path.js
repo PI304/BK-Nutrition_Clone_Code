@@ -1,5 +1,4 @@
 export default class Paths {
-static naver = 'www.naver.com';
 
 static main = '/main';
 
