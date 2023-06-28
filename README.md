@@ -74,10 +74,9 @@ Langauge : JavaScript
 
 ### 4. 협업 방법
 ---
-#### Master에 머지 
 #### 1. Branching Strategy
-PR을 통해 Feature 브랜치들을 Develop에 머지하고,
-최종 배포할 시기가 되면 Admin 관리자가 Develop 브랜치를 Production 브랜치에 머지하여 배포하는 단순한 구조를 따릅니다.
+PR을 통해 Feature 브랜치들을 master에 머지하고,
+최종 배포할 시기가 되면 Admin 관리자가 master 브랜치를 Production 브랜치에 머지하여 배포하는 단순한 구조를 따릅니다.
 
 #### 2. 협업 과정
 1. 로컬에 Clone한 레포에서 Feature 브랜치를 생성하여 작업합니다.
