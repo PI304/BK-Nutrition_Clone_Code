@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-function Member() {
+function NoticePage() {
 	return (
 		<div>
-			<p>Member</p>
+			<p>Notice</p>
 		</div>
 	);
 }
 
-export default Member;
+export default NoticePage;

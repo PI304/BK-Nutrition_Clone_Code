@@ -1,6 +1,6 @@
 export default class Paths {
 
-static main = '/main';
+static main = '/';
 
 static intro = '/intro';
 

@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-function Notice() {
+function ResourcePage() {
 	return (
 		<div>
-			<p>Notice</p>
+			<p>Resource</p>
 		</div>
 	);
 }
 
-export default Notice;
+export default ResourcePage;

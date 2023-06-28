@@ -32,7 +32,7 @@ const FooterContainer = styled.footer`
 	> div {
 		width: 120rem;
 		height: 100%;
-		align-items: center;
+		// align-items: center;
 		justify-content: center;
 		display: flex;
 		flex-direction: column;
@@ -44,11 +44,13 @@ const FooterContainer = styled.footer`
 				display: flex;
 				justify-content: center;
 				
+				> img {
+					max-width: 100%;
+				}
 		}
 
 
 		> div:last-child {
-
 			// width: 47.1rem;
 			height: 5rem;
 			white-space: pre-wrap;
@@ -60,14 +62,13 @@ const FooterContainer = styled.footer`
 				${Fonts.regular14}
 				justify-content: center;
 				line-height: 150%;
+				text-align: center;
 			}
 			
 			> p: last-child {
-				
 				line-height: 130%;
 				color: #6b748b;
 				display: flex;
-				font-size: 0.8rem;
 				${Fonts.regular10}
 				justify-content: center;
 				line-height: 130%;
@@ -77,26 +78,6 @@ const FooterContainer = styled.footer`
 		}
 	}
 
-	// > div {
-	// 	font-family: 'Inter';
-	// 	font-weight: 400;
-	// 	line-height: 2.1rem;
-	// }
-
-	// > div #copyright1 {
-	// 	color: white;
-	// 	display: flex;
-	// 	font-size: 1.4rem;
-	// 	justify-content: center;
-	// }
-	// // nth-child로 했을 때 스타일 적용 안 됨
-
-	// > div .copyright2 {
-	// 	color: #6b748b;
-	// 	display: flex;
-	// 	font-size: 0.8rem;
-	// 	justify-content: center;
-	// }
 `;
 
 export default Footer;

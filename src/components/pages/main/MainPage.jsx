@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Fonts from '../../../styles/fonts';
 
 function MainPage() {
 	return (
@@ -11,9 +12,13 @@ function MainPage() {
 }
 
 const Main = styled.div`
-background-color: orange;
+	background-color: rgba(90, 180, 250);
+	height: 10rem;
 
-}
+	> div > p {
+		text-align: center;
+		${Fonts.medium24}
+	}
 `;
 
 export default MainPage;
