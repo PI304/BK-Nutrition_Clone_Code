@@ -22,10 +22,10 @@ $ npm start
 ```
 ### ⚙️ 2. 기술 스택 
 ----
-IDE : VSCODE
-Formatter : Prettier, ESLint
-Library : React 18.2.0, styled-components 5.3.11
-Langauge : JavaScript
+- IDE : VSCODE
+- Formatter : Prettier, ESLint
+- Library : React 18.2.0, styled-components 5.3.11
+- Langauge : JavaScript
 
 ###  3. 디렉토리 구조 
 ---
@@ -58,7 +58,7 @@ Langauge : JavaScript
    │  └─ shared
    │     ├─ Footer.jsx
    │     └─ Header.jsx
-	 ├─ pages
+   ├─ pages
    ├─ styles
    ├─ App.js
    ├─ index.js
@@ -157,10 +157,8 @@ BREAKING CHANGE : 급한 변경 footer에 추가
 ```
 
 ### 5. 코드 컨벤션 
-- Router : 케밥케이스(kebab-case)  
 - Component : 파스칼케이스(PascalCase)
-- util 함수 : 카멜 케이스(camelCase)
-- custom Hook : 카멜 케이스(camelCase), 단 무조건 use로 시작
+- Non-Component : 소문자 
 
  
 
