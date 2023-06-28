@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import mainLogo from '../../assets/main-logo.png';
 import Fonts from '../../styles/fonts';
 import Paths from '../../constant/path';
+import IntroPage from '../pages/intro/IntroPage';
 
 function Header() {
 	const [showDropdown, setShowDropdown] = useState(false);
@@ -26,16 +28,16 @@ function Header() {
 					onMouseEnter={handleDropdownEnter}
 					onMouseLeave={handleDropdownLeave}>
 					<div>
-						<a href={Paths.intro}>교육팀 소개</a>
+						<Link to={Paths.intro}>교육팀 소개</Link>
 					</div>
 					<div>
-						<a href={Paths.intro}>연구팀 구성</a>
+						<Link to={Paths.member}>연구팀 구성</Link>
 					</div>
 					<div>
-						<a href={Paths.intro}>사업성과</a>
+						<Link to={Paths.achievement}>사업성과</Link>
 					</div>
 					<div>
-						<a href={Paths.intro}>커뮤니티</a>
+						<Link to={Paths.notice}>커뮤니티</Link>
 					</div>
 					<div
 						className={`dropdown-content ${showDropdown ? 'show' : ''}`}
@@ -43,51 +45,51 @@ function Header() {
 						onMouseLeave={handleDropdownLeave}>
 						<div className='grid-container'>
 							<div className='grid-column'>
-								<a href={Paths.intro} className='grid-item'>
+								<Link to={Paths.intro} className='grid-item'>
 									인사말
-								</a>
-								<a href='www.naver.com' className='grid-item'>
+								</Link>
+								<Link to={Paths.intro} className='grid-item'>
 									목표 및 비전
-								</a>
-								<a href='www.naver.com' className='grid-item'>
+								</Link>
+								<Link to={Paths.intro} className='grid-item'>
 									조직 현황
-								</a>
-								<a href='www.naver.com' className='grid-item'>
+								</Link>
+								<Link to={Paths.intro} className='grid-item'>
 									찾아오시는 길
-								</a>
+								</Link>
 								<div className='grid-divider' />
 							</div>
 							<div className='grid-column'>
-								<a href='www.naver.com' className='grid-item'>
+								<Link to={Paths.member} className='grid-item'>
 									참여교수
-								</a>
-								<a href='www.naver.com' className='grid-item'>
+								</Link>
+								<Link to={Paths.member} className='grid-item'>
 									신진 연구인력
-								</a>
-								<a href='www.naver.com' className='grid-item'>
+								</Link>
+								<Link to={Paths.member} className='grid-item'>
 									참여 대학원생
-								</a>
+								</Link>
 								<div className='grid-divider' />
 							</div>
 							<div className='grid-column'>
-								<a href='www.naver.com' className='grid-item'>
+								<Link to={Paths.achievement} className='grid-item'>
 									연구 업적
-								</a>
-								<a href='www.naver.com' className='grid-item'>
+								</Link>
+								<Link to={Paths.international} className='grid-item'>
 									국제 협력
-								</a>
-								<a href='www.naver.com' className='grid-item'>
+								</Link>
+								<Link to={Paths.industrial} className='grid-item'>
 									산학 협력
-								</a>
+								</Link>
 								<div className='grid-divider' />
 							</div>
 							<div className='grid-column'>
-								<a href='www.naver.com' className='grid-item'>
+								<Link to={Paths.notice} className='grid-item'>
 									공지사항
-								</a>
-								<a href='www.naver.com' className='grid-item'>
+								</Link>
+								<Link to={Paths.resource} className='grid-item'>
 									자료실
-								</a>
+								</Link>
 							</div>
 						</div>
 					</div>
@@ -118,10 +120,12 @@ const HeaderContainer = styled.header`
 
 		> div:last-child {
 			display: flex;
-			width: 65rem;
+			flex-wrap: nowrap;
+			gap: 6rem;
+			// width: 65rem;
 
 			> div {
-				width: 100%;
+				// width: 100%;
 				height: 100%;
 				// margin: 1.6rem;
 				cursor: pointer;
@@ -142,69 +146,94 @@ const HeaderContainer = styled.header`
 				position: absolute;
 				background: rgba(0, 0, 0, 0.55);
 				width: 100%;
+				// width: 100%으로 주니 안 맞음
 				box-shadow: 0px 0.8rem 1rem 0px rgba(0, 0, 0, 0.2);
 				z-index: 1;
-				top: 7.4rem;
+				top: 9rem;
 				color: white;
-				transform: translateX(-50.6%);
+				transform: translateX(-52%);
+				height: 13rem;
+
+				> div {
+					// .grid-container
+					display: grid;
+					grid-template-columns: repeat(4, 0.5fr);
+					padding: 1rem;
+					width: 40%;
+					transform: translateX(120%);
+
+
+					> div {
+						// .grid-column 
+						display: flex;
+						flex-direction: column;
+						position: relative;
+						align-items: center;
+					
+					> 	div {
+						position: absolute; /* 절대 위치 설정 */
+						right: 0;
+						top: 50%;
+						transform: translateY(-50%);
+						width: 0.1rem; /* 가로 선의 너비 */
+						height: 90%; /* 가로 선의 높이 */
+						background-color: white; /* 가로 선의 색상 */
+					}
+
+					> a .grid-item {
+						color: white;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						font-size: 1.4rem;
+						font-family: 'Inter';
+						font-style: normal;
+						font-weight: 500;
+						line-height: 1.7rem;
+						padding: 0.5rem 0.5rem;
+					}
+					
+					}
+
+
+					}
+				}
 			}
 		}
 	}
 `;
 
 const HeaderLayout = styled.div`
-	// .dropdown-content {
-	// 	display: none;
-	// 	position: absolute;
-	// 	background: rgba(0, 0, 0, 0.55);
-	// 	width: 100%;
-	// 	box-shadow: 0px 0.8rem 1rem 0px rgba(0, 0, 0, 0.2);
-	// 	z-index: 1;
-	// 	top: 7.4rem;
-	// 	color: white;
-	// 	transform: translateX(-50.6%);
-	// }
-
 	.dropdown-content.show {
 		display: block;
 	}
 
-	.grid-container {
-		display: grid;
-		grid-template-columns: repeat(4, 0.5fr);
-		padding: 1rem;
-		width: 40%;
-		transform: translateX(120%);
-	}
+	// .grid-container {
+	// 	display: grid;
+	// 	grid-template-columns: repeat(4, 0.5fr);
+	// 	padding: 1rem;
+	// 	width: 40%;
+	// 	transform: translateX(120%);
+	// }
 
-	.grid-column {
-		display: flex;
-		flex-direction: column;
-		position: relative;
-	}
+	// .grid-column {
+	// 	display: flex;
+	// 	flex-direction: column;
+	// 	position: relative;
+	// }
 
-	.grid-divider {
-		position: absolute; /* 절대 위치 설정 */
-		right: 0;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 0.1rem; /* 가로 선의 너비 */
-		height: 90%; /* 가로 선의 높이 */
-		background-color: white; /* 가로 선의 색상 */
-	}
-
-	.grid-item {
-		color: white;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-size: 1.4rem;
-		font-family: 'Inter';
-		font-style: normal;
-		font-weight: 500;
-		line-height: 1.7rem;
-		padding: 0.5rem 0.5rem;
-	}
+	// .grid-item {
+	// 	color: white;
+	// 	display: flex;
+	// 	align-items: center;
+	// 	justify-content: center;
+	// 	font-size: 1.4rem;
+	// 	font-family: 'Inter';
+	// 	font-style: normal;
+	// 	font-weight: 500;
+	// 	line-height: 1.7rem;
+	// 	padding: 0.5rem 0.5rem;
+	// }
 `;
 
 export default Header;
