@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import MainPage from '../components/pages/main/MainPage';
 import DefaultLayout from '../components/layout/DefaultLayout';
 
@@ -11,3 +10,4 @@ function Main() {
 }
 
 export default Main;
+
