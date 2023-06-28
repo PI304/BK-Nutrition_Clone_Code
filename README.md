@@ -1,5 +1,5 @@
 ## BK-Nutrition 클론 코딩 사이트 
---- 
+
 
 ### 🖥️ 프로젝트 소개
 연세대학교 Brain Korea 21 FOUR 웰니스 융합인재 양성팀 홈페이지를 클론코딩한 웹사이트입니다.
@@ -9,7 +9,7 @@
 23.06.14일 - 23.07.00일
 
 ### 1. 시작하기
-----
+---
 #### 1. Clone
 ```
 $ git clone https://github.com/PI304/BK-Nutrition_Clone_Code.git
@@ -22,10 +22,10 @@ $ npm start
 ```
 ### ⚙️ 2. 기술 스택 
 ----
-- IDE : VSCODE
-- Formatter : Prettier, ESLint
-- Library : React 18.2.0, styled-components 5.3.11
-- Langauge : JavaScript
+<img src="https://img.shields.io/badge/visualstudiocode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white"> 
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white">
+
+<img src="https://img.shields.io/badge/prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white"> <img src="https://img.shields.io/badge/eslint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white"> <img src="https://img.shields.io/badge/styledcomponents-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white">
 
 ###  3. 디렉토리 구조 
 ---
@@ -58,6 +58,8 @@ $ npm start
    │  └─ shared
    │     ├─ Footer.jsx
    │     └─ Header.jsx
+   ├─ constant
+   │     └─ path.js
    ├─ pages
    ├─ styles
    ├─ App.js
@@ -70,8 +72,39 @@ $ npm start
    └─ README.md
 ```
 
+#### 1. 디렉토리 설명 
+#### assets
+- 모든 이미지가 들어가는 폴더
+- 이미지 이름의 경우 직관적으로 작명
 
+#### components
+- components : 모든 페이지가 들어가는 폴더
+- layout : DefaultLayout.jsx에는 완성된 화면이 들어감
+- pages : 실제 작업하는 영역이며 각 폴더 안에 jsx 파일이 들어감
+- shared : Header, Footer와 같이 공유하는 영역에 대한 폴더
 
+![pages](https://github.com/PI304/BK-Nutrition_Clone_Code/assets/120708446/c3fb7d5d-2ccc-43a4-a511-f59dd2cce560)
+
+#### pages
+- 최종적으로 렌더링되는 페이지, src 안의 pages와 다름
+
+#### styles
+- reset.css : 스타일 초기화, rem 기준으로 설정 (1rem = 10px)
+- fonts.js : font size, weight 별로 정리한 폰트 스타일
+  -    사용 방법 : ${Fonts.bold20} 
+
+#### App.js
+- 실제로 화면에 표시되는 내용 등은 여기에서 정의
+
+#### index.js
+- HTML 템플릿 및 JavaScript의 컴포넌트를 조합하여 렌더링하고 실제 표시
+- “App.js 파일 안에 있는 html을 public에 있는 index.html에 넣어주세요~ " 라고 명령하는 역할
+
+#### public
+- index.html
+    - 'root' 라는 아이디를 가진 div을 가지고 있으며 렌더링된 결과가 표시
+    → App.js 의 내용이 index.js 를 거쳐 index.html 의 'root' div 에 그려지게 됨
+  
 ### 4. 협업 방법
 ---
 #### 1. Branching Strategy
@@ -131,10 +164,9 @@ Feature/[기능요약]
 ex) Feature/modal-publishing
 ```
 
-#### 5. 커밋  컨벤션
+#### 5. 커밋 컨벤션
 
 ```
-
 <태그>: <제목>
 
 - : 뒤에만 띄어쓰기가 있습니다
@@ -157,9 +189,9 @@ BREAKING CHANGE : 급한 변경 footer에 추가
 ```
 
 ### 5. 코드 컨벤션 
-- Component : 파스칼케이스(PascalCase)
-- Non-Component : 소문자 
-
+- Component : 파스칼케이스(PascalCase)  ex) MainPage.jsx 
+- Non-Component 및 하위 폴더명 : 소문자(lower case)로 작성 ex. pages/main.js
+- assets 폴더 내 이미지 파일 : 케밥 케이스(Kebab case) ex. main-logo.png
  
 
 ### 📌 주요 기능
