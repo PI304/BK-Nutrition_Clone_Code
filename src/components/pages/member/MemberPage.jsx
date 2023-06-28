@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-function IntroPage() {
+function MemberPage() {
 	return (
 		<div>
-			<p>This is Intro </p>
+			<p>Member</p>
 		</div>
 	);
 }
 
-export default IntroPage;
+export default MemberPage;
