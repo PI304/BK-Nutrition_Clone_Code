@@ -21,7 +21,9 @@ function Header() {
 		<HeaderContainer>
 			<div>
 				<div>
-					<img src={mainLogo} alt='main-logo' />
+					<Link to={Paths.main}>
+						<img src={mainLogo} alt='main-logo' />
+					</Link>
 				</div>
 				<div
 					className='dropdown'
@@ -113,8 +115,13 @@ const HeaderContainer = styled.header`
 			height: 9rem;
 			display: flex;
 
-			> img {
-				object-fit: contain;
+			> a {
+				
+				> img {
+					object-fit: contain;
+					width: 27rem;
+				}
+
 			}
 		}
 
