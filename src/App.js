@@ -26,7 +26,6 @@ function App() {
 			<Route path={Paths.achievement} element={<Achievement />} />
 			<Route path={Paths.international} element={<International />} />
 			<Route path={Paths.industrial} element={<Industrial />} />
-			
             </Routes>
         </Router>
 
