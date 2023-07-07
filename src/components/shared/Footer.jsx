@@ -49,7 +49,6 @@ const FooterContainer = styled.footer`
 				}
 		}
 
-
 		> div:last-child {
 			// width: 47.1rem;
 			height: 5rem;
@@ -65,7 +64,7 @@ const FooterContainer = styled.footer`
 				text-align: center;
 			}
 			
-			> p: last-child {
+			> p:last-child {
 				line-height: 130%;
 				color: #6b748b;
 				display: flex;
