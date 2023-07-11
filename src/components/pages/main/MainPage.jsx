@@ -4,9 +4,15 @@ import Fonts from '../../../styles/fonts';
 import mainBackground from '../../../assets/main-background.png';
 import Paths from '../../../constant/path';
 import engLogo from '../../../assets/eng-logo.png';
+import footerLogo1 from '../../../assets/footer-1.png';
+import footerLogo2 from '../../../assets/footer-2.png';
+import rndLogo from '../../../assets/rnd-logo.png';
+import prevBtn from '../../../assets/prev-button.png';
+import nextBtn from '../../../assets/next-button.png';
 import mainNotice from '../../../assets/main-notice.png';
 import mainBusiness from '../../../assets/main-business.png';
 import MainContent from '../../shared/MainContent';
+import Footer from '../../shared/Footer';
 
 function MainPage() {
 	return (
@@ -43,7 +49,59 @@ function MainPage() {
 
 			<Carousel>
 				<div>
-					<img src={engLogo} alt='englogo' />
+					<div>
+						<img src={prevBtn} alt='prev-button' />
+					</div>
+
+					<Link to={Paths.intro}>
+						<img src={engLogo} alt='eng-logo' />
+					</Link>
+					<Link to={Paths.intro}>
+						<img src={footerLogo1} alt='footer-1' />
+					</Link>
+					<Link to={Paths.intro}>
+						<img src={footerLogo2} alt='footer-2' />
+					</Link>
+
+					<div>
+						<img src={nextBtn} alt='next-button' />
+					</div>
+				</div>
+
+				<div>
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						width='10'
+						height='11'
+						viewBox='0 0 10 11'
+						fill='none'>
+						<path
+							d='M9.5 5.12898C9.5 7.61304 7.48546 9.6271 5 9.6271C2.51454 9.6271 0.5 7.61304 0.5 5.12898C0.5 2.64491 2.51454 0.630859 5 0.630859C7.48546 0.630859 9.5 2.64491 9.5 5.12898Z'
+							stroke='#333333'
+						/>
+					</svg>
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						width='10'
+						height='11'
+						viewBox='0 0 10 11'
+						fill='none'>
+						<path
+							d='M9.5 5.12898C9.5 7.61304 7.48546 9.6271 5 9.6271C2.51454 9.6271 0.5 7.61304 0.5 5.12898C0.5 2.64491 2.51454 0.630859 5 0.630859C7.48546 0.630859 9.5 2.64491 9.5 5.12898Z'
+							stroke='#333333'
+						/>
+					</svg>
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						width='10'
+						height='11'
+						viewBox='0 0 10 11'
+						fill='black'>
+						<path
+							d='M9.5 5.12898C9.5 7.61304 7.48546 9.6271 5 9.6271C2.51454 9.6271 0.5 7.61304 0.5 5.12898C0.5 2.64491 2.51454 0.630859 5 0.630859C7.48546 0.630859 9.5 2.64491 9.5 5.12898Z'
+							stroke='#333333'
+						/>
+					</svg>
 				</div>
 			</Carousel>
 		</Main>
@@ -154,17 +212,40 @@ const MainBoard = styled.div`
 `;
 
 const Carousel = styled.div`
+display: flex;
+    flex-direction: column;
 
-		div {
+		> div: first-child {
 			display: flex;
 			justify-content: center;
 			flex-wrap: wrap;
+			align-content: center;
+			gap: 7rem;
+			padding: 2rem;
+			align-items: center;
 
 			> img {
 				width: 30rem;
 				height: auto;
 			}
+
+			> div {
+				img {
+					height: 2.2rem;
+					width: 1rem;
+				}
+			}
 		}
+		
+		> div: last-child {
+			padding: 2rem;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			align-content: center;
+			gap: 1rem;
+		}
+
 	}
 `;
 
