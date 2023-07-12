@@ -59,8 +59,7 @@ const MainContainter = styled.div`
 `;
 
 const Notice = styled.div`
-	
-		// background-color: rgba(200, 200, 255);
+
 		width: 58rem;
 		height: 40rem;
 		display: flex;
@@ -71,7 +70,7 @@ const Notice = styled.div`
 			color: ${Colors.blue700};
 			height: 3rem;
 			border-bottom: solid 1px ${Colors.gray500};
-			gap: 50rem;
+			justify-content: space-between;
 			display: flex;
 			align-items: baseline;
 
@@ -115,7 +114,6 @@ const Notice = styled.div`
 		}
 
 		> div: last-child {
-			
 			> ul {
 				> li {
 					border-bottom: solid 1px ${Colors.gray300};
@@ -133,9 +131,7 @@ const Notice = styled.div`
 					}
 				}
 			}
-		}
-		
-		
+		}		
 	}
 `;
 
