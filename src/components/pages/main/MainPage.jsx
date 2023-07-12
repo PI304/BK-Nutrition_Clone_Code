@@ -14,6 +14,7 @@ import mainBusiness from '../../../assets/main-business.png';
 import MainContent from '../../shared/MainContent';
 import Footer from '../../shared/Footer';
 
+
 function MainPage() {
 	return (
 		<Main>
@@ -212,7 +213,7 @@ const MainBoard = styled.div`
 `;
 
 const Carousel = styled.div`
-display: flex;
+    display: flex;
     flex-direction: column;
 
 		> div: first-child {
@@ -245,7 +246,6 @@ display: flex;
 			align-content: center;
 			gap: 1rem;
 		}
-
 	}
 `;
 
