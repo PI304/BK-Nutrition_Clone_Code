@@ -209,6 +209,7 @@ const MainBoard = styled.div`
 	display: flex;
 	justify-content: center;
 	gap: 4rem;
+	flex-wrap: wrap;
 `;
 
 const Carousel = styled.div`
@@ -218,7 +219,7 @@ display: flex;
 		> div: first-child {
 			display: flex;
 			justify-content: center;
-			flex-wrap: wrap;
+			// flex-wrap: wrap;
 			align-content: center;
 			gap: 7rem;
 			padding: 2rem;

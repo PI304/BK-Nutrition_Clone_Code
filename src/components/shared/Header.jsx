@@ -45,7 +45,32 @@ function Header() {
 						className={`dropdown-content ${showDropdown ? 'show' : ''}`}
 						onMouseEnter={handleDropdownEnter}
 						onMouseLeave={handleDropdownLeave}>
-						<div className='grid-container'>
+						<div>
+							<div>
+								<Link to={Paths.intro}>인사말</Link>
+								<Link to={Paths.intro}>목표 및 비전</Link>
+								<Link to={Paths.intro}>조직 현황</Link>
+								<Link to={Paths.intro}>찾아오시는 길</Link>
+							</div>
+							<div>
+								<Link to={Paths.member}>참여교수</Link>
+								<Link to={Paths.member}>신진 연구인력</Link>
+								<Link to={Paths.member}>참여 대학원생</Link>
+								<div className='grid-divider' />
+							</div>
+							<div>
+								<Link to={Paths.achievement}>연구 업적</Link>
+								<Link to={Paths.international}>국제 협력</Link>
+								<Link to={Paths.industrial}>산학 협력</Link>
+								<div className='grid-divider' />
+							</div>
+							<div>
+								<Link to={Paths.notice}>공지사항</Link>
+								<Link to={Paths.resource}>자료실</Link>
+							</div>
+						</div>
+
+						{/* <div className='grid-container'>
 							<div className='grid-column'>
 								<Link to={Paths.intro} className='grid-item'>
 									인사말
@@ -93,7 +118,7 @@ function Header() {
 									자료실
 								</Link>
 							</div>
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</div>
@@ -149,7 +174,7 @@ const HeaderContainer = styled.header`
 
 			> div:last-child {
 				// .dropdown-content 입니다
-				display: none;
+				// display: none;
 				position: absolute;
 				background: rgba(0, 0, 0, 0.55);
 				width: 100%;
@@ -162,9 +187,10 @@ const HeaderContainer = styled.header`
 				height: 13rem;
 
 				> div {
-					// .grid-container
-					display: grid;
-					grid-template-columns: repeat(4, 0.5fr);
+		
+					display: flex;
+
+					gap:5rem;
 					padding: 1rem;
 					width: 40%;
 					transform: translateX(120%);
