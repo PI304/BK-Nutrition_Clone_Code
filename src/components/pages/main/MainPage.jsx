@@ -14,7 +14,6 @@ import mainBusiness from '../../../assets/main-business.png';
 import MainContent from '../../shared/MainContent';
 import Footer from '../../shared/Footer';
 
-
 function MainPage() {
 	return (
 		<Main>
@@ -210,16 +209,17 @@ const MainBoard = styled.div`
 	display: flex;
 	justify-content: center;
 	gap: 4rem;
+	flex-wrap: wrap;
 `;
 
 const Carousel = styled.div`
-    display: flex;
+display: flex;
     flex-direction: column;
 
 		> div: first-child {
 			display: flex;
 			justify-content: center;
-			flex-wrap: wrap;
+			// flex-wrap: wrap;
 			align-content: center;
 			gap: 7rem;
 			padding: 2rem;
@@ -246,6 +246,7 @@ const Carousel = styled.div`
 			align-content: center;
 			gap: 1rem;
 		}
+
 	}
 `;
 
