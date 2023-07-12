@@ -16,7 +16,9 @@ function MainContent({ title }) {
 					<img src={mainMoreInfo} alt='main-moreinfo' />
 				</Link>
 				<div>
-					<img src={title === 'NOTICE' ? mainNotice : mainBusiness} alt='main-notice' />
+					<Link to={title === 'NOTICE' ? Paths.notice : Paths.achievement}>
+						<img src={title === 'NOTICE' ? mainNotice : mainBusiness} alt='main-notice' />
+					</Link>
 					<div>
 						<p>공지사항입니다.</p>
 						<p>
@@ -24,14 +26,27 @@ function MainContent({ title }) {
 							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
 							exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
 						</p>
+						<p>2023.07.11</p>
 					</div>
 				</div>
 				<div>
 					<ul>
-						<li>BK21 FOUR 웰니스 공지사항입니다.</li>
-						<li>BK21 FOUR 웰니스 공지사항입니다.</li>
-						<li>BK21 FOUR 웰니스 공지사항입니다.</li>
-						<li>BK21 FOUR 웰니스 공지사항입니다.</li>
+						<li>
+							BK21 FOUR 웰니스 공지사항입니다.
+							<div>23.07.10</div>
+						</li>
+						<li>
+							BK21 FOUR 웰니스 공지사항입니다.
+							<div>23.07.10</div>
+						</li>
+						<li>
+							BK21 FOUR 웰니스 공지사항입니다.
+							<div>23.07.10</div>
+						</li>
+						<li>
+							BK21 FOUR 웰니스 공지사항입니다.
+							<div>23.07.10</div>
+						</li>
 					</ul>
 				</div>
 			</Notice>
@@ -61,15 +76,16 @@ const Notice = styled.div`
 			align-items: baseline;
 
 			> img {
-				width: 0.6rem;
-				height: 1.2rem;
+				// width: 0.6rem;
+				// height: 1.2rem;
 			}
 		}
 
-		> div {
+		> div: nth-child(2) {
 			display: flex;
 			padding: 2rem 1rem;
 			gap: 4rem;
+			border-bottom: solid 1px ${Colors.gray500};
 			
 			> div {
 				display: flex;
@@ -81,14 +97,42 @@ const Notice = styled.div`
 				> p:first-child{
 					${Fonts.bold20};
 					color: ${Colors.gray900};
+					line-height: normal;
+				}
+
+				> p:nth-child(2) {
+					${Fonts.regular14};
+					line-height: 1.694rem;
+					color: ${Colors.gray900};
 				}
 
 				> p:last-child {
-					${Fonts.regular14};
-					color: ${Colors.gray900};
+					${Fonts.medium12};
+					color: ${Colors.gray800};
 				}
 			}
 	
+		}
+
+		> div: last-child {
+			
+			> ul {
+				> li {
+					border-bottom: solid 1px ${Colors.gray300};
+					${Fonts.regular16};
+					width: 58rem;
+					height: 4rem;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					padding: 1.1rem;
+
+					> div {
+						${Fonts.regular12};
+						color: ${Colors.gray800};
+					}
+				}
+			}
 		}
 		
 		
