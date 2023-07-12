@@ -232,7 +232,7 @@ const MapBox = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 3rem;
-	> div:last-child{
+	> div:last-child {
 		margin: 3rem 0 0 9rem;
 		> div {
 			display: flex;
@@ -242,15 +242,14 @@ const MapBox = styled.div`
 			> img {
 				height: 6rem;
 			}
-			>p{
+			> p {
 				${Fonts.bold16}
 			}
 		}
-		>div:nth-child(2){
-			margin : 1.5rem 0 0 0;
+		> div:nth-child(2) {
+			margin: 1.5rem 0 0 0;
 		}
 	}
-	>
 `;
 
 export default IntroPage;
