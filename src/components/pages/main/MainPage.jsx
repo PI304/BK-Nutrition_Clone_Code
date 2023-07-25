@@ -32,8 +32,10 @@ function MainPage() {
 	};
 
 	const goToPrevSlide = () => {
-		setCurrentSlide((prevSlide) => (prevSlide - 1 + TOTAL_SLIDES) % TOTAL_SLIDES);
+		setCurrentSlide(
+      (prevSlide) => (prevSlide - 1 + TOTAL_SLIDES) % TOTAL_SLIDES);
 	};
+  
 	const preparedCarouselImages = [...carouselImages, ...carouselImages, ...carouselImages];
 
 	return (
@@ -221,12 +223,12 @@ const Carousel = styled.div`
 		width: 120rem;
 		display: flex;
 		justify-content: space-between;
-			align-items: center;
+		align-items: center;
 
 		> div: nth-child(2) {
 			width: 104rem;
 			position: relative;
-			display: flex;
+      display: flex;
 			justify-content: center;
 			align-items: center;
 			gap: 2rem;
@@ -237,9 +239,7 @@ const Carousel = styled.div`
 				display: flex;
 				width: 104rem;
 				justify-content: flex-start;
-	
 				// overflow: hidden;
-				
 	
 				> div {
 				display: flex;
@@ -276,8 +276,8 @@ const Carousel = styled.div`
 				right: 0rem;
 			}
 		}
+  }
 
-		}
 		> div: last-child {
 			padding: 2rem;
 			display: flex;
@@ -301,4 +301,5 @@ const ImageWrapper = styled.div`
 		object-fit: cover;
 	}
 `;
+
 export default MainPage;

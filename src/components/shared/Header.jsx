@@ -25,7 +25,9 @@ function Header() {
 						<img src={mainLogo} alt='main-logo' />
 					</Link>
 				</div>
-				<div onMouseEnter={handleDropdownEnter} onMouseLeave={handleDropdownLeave}>
+				<div 
+            onMouseEnter={handleDropdownEnter} 
+            onMouseLeave={handleDropdownLeave}>
 					<div>
 						<Link to={Paths.intro}>교육팀 소개</Link>
 					</div>
@@ -41,7 +43,9 @@ function Header() {
 				</div>
 			</div>
 			{showDropdown && (
-				<Dropdown onMouseEnter={handleDropdownEnter} onMouseLeave={handleDropdownLeave}>
+				<Dropdown
+          onMouseEnter={handleDropdownEnter} 
+          onMouseLeave={handleDropdownLeave}>
 					<div>
 						<div>
 							<div>
@@ -74,6 +78,7 @@ function Header() {
 		</HeaderContainer>
 	);
 }
+
 const HeaderContainer = styled.header`
 	height: 9rem;
 	display: flex;
@@ -174,10 +179,12 @@ justify-content: center;
                         line-height: 1.7rem;
                         ${Fonts.medium14};
                     }                   
-                    }
                 }
             }
         }
+    }
 `;
+
+
 
 export default Header;
