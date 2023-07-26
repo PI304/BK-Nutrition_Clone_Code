@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Fonts from '../../../styles/fonts';
@@ -16,6 +17,27 @@ import Footer from '../../shared/Footer';
 import CarouselBtn from '../../../styles/svg';
 
 function MainPage() {
+	const carouselImages = [
+		{ id: 1, image: engLogo, alt: 'eng-logo' },
+		{ id: 2, image: footerLogo1, alt: 'footer-1' },
+		{ id: 3, image: footerLogo2, alt: 'footer-2' },
+		{ id: 4, image: rndLogo, alt: 'rnd-logo' },
+	];
+
+	const TOTAL_SLIDES = carouselImages.length;
+	const [currentSlide, setCurrentSlide] = useState(0);
+
+	const goToNextSlide = () => {
+		setCurrentSlide((prevSlide) => (prevSlide + 1) % TOTAL_SLIDES);
+	};
+
+	const goToPrevSlide = () => {
+		setCurrentSlide(
+      (prevSlide) => (prevSlide - 1 + TOTAL_SLIDES) % TOTAL_SLIDES);
+	};
+  
+	const preparedCarouselImages = [...carouselImages, ...carouselImages, ...carouselImages];
+
 	return (
 		<Main>
 			<MainBackground>
@@ -50,31 +72,36 @@ function MainPage() {
 
 			<Carousel>
 				<div>
-					<div>
+					<button type='button' className='prev-button' onClick={goToPrevSlide}>
 						<img src={prevBtn} alt='prev-button' />
-					</div>
-
-					<Link to={Paths.intro}>
-						<img src={engLogo} alt='eng-logo' />
-					</Link>
-					<Link to={Paths.intro}>
-						<img src={footerLogo1} alt='footer-1' />
-					</Link>
-					<Link to={Paths.intro}>
-						<img src={footerLogo2} alt='footer-2' />
-					</Link>
-
+					</button>
 					<div>
-						<img src={nextBtn} alt='next-button' />
+						<div>
+							<div style={{ transform: `translate(-${currentSlide * 36}rem, 0)` }}>
+								{preparedCarouselImages.map((item, index) => (
+									<ImageWrapper key={item.alt}>
+										<Link to={Paths.intro}>
+											<img
+												src={item.image}
+												alt={item.alt}
+												className={index === currentSlide ? 'center' : ''}
+											/>
+										</Link>
+									</ImageWrapper>
+								))}
+							</div>
+						</div>
 					</div>
+
+					<button type='button' className='next-button' onClick={goToNextSlide}>
+						<img src={nextBtn} alt='next-button' />
+					</button>
 				</div>
 
 				<div>
-					<CarouselBtn />
-					<CarouselBtn />
-					<CarouselBtn />
-					<CarouselBtn />
-					<CarouselBtn />
+					{carouselImages.map((item, index) => (
+						<CarouselBtn key={item.alt} active={index === currentSlide} />
+					))}
 				</div>
 			</Carousel>
 		</Main>
@@ -187,31 +214,70 @@ const MainBoard = styled.div`
 
 const Carousel = styled.div`
 	display: flex;
-    flex-direction: column;
+	flex-direction: column;
 	padding-bottom: 6.8rem;
-	
-		> div: first-child {
-			display: flex;
+	overflow: hidden;
+	align-items: center;
+
+	> div {
+		width: 120rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		> div: nth-child(2) {
+			width: 104rem;
+			position: relative;
+      display: flex;
 			justify-content: center;
-			// flex-wrap: wrap;
-			align-content: center;
-			gap: 7rem;
-			padding: 2rem;
 			align-items: center;
-
-			> img {
-				width: 30rem;
-				height: auto;
-			}
-
-			> div {
-				img {
-					height: 2.2rem;
-					width: 1rem;
+			gap: 2rem;
+			padding: 2rem 0rem;
+			overflow: hidden; 
+	
+			> div: first-child {
+				display: flex;
+				width: 104rem;
+				justify-content: flex-start;
+				// overflow: hidden;
+	
+				> div {
+				display: flex;
+				transition: transform 0.3s ease;
+				gap: 7rem;
+				// overflow: hidden;
+				justify-content: flex-start;
 				}
 			}
+	
+			> button {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				// width: 3rem;
+				height: 3rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-radius: 50%;
+				background-color: transparent;
+				transition: background-color 0.2s ease;
+				cursor: pointer;
+				border: none;
+				z-index: 1;
+			}
+	
+	
+			.prev-button {
+				left: 0rem;
+			}
+	
+			.next-button {
+				right: 0rem;
+			}
 		}
-		
+  }
+
 		> div: last-child {
 			padding: 2rem;
 			display: flex;
@@ -220,6 +286,19 @@ const Carousel = styled.div`
 			align-content: center;
 			gap: 1rem;
 		}
+	}
+
+`;
+
+const ImageWrapper = styled.div`
+	transition: transform 0.3s ease;
+	display: flex;
+	align-items: center;
+
+	img {
+		width: 30rem;
+		height: auto;
+		object-fit: cover;
 	}
 `;
 

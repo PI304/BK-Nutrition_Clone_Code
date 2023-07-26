@@ -25,7 +25,9 @@ function Header() {
 						<img src={mainLogo} alt='main-logo' />
 					</Link>
 				</div>
-				<div onMouseEnter={handleDropdownEnter} onMouseLeave={handleDropdownLeave}>
+				<div 
+            onMouseEnter={handleDropdownEnter} 
+            onMouseLeave={handleDropdownLeave}>
 					<div>
 						<Link to={Paths.intro}>교육팀 소개</Link>
 					</div>
@@ -41,7 +43,9 @@ function Header() {
 				</div>
 			</div>
 			{showDropdown && (
-				<Dropdown onMouseEnter={handleDropdownEnter} onMouseLeave={handleDropdownLeave}>
+				<Dropdown
+          onMouseEnter={handleDropdownEnter} 
+          onMouseLeave={handleDropdownLeave}>
 					<div>
 						<div>
 							<div>
@@ -74,6 +78,7 @@ function Header() {
 		</HeaderContainer>
 	);
 }
+
 const HeaderContainer = styled.header`
 	height: 9rem;
 	display: flex;
@@ -100,13 +105,13 @@ const HeaderContainer = styled.header`
 		> div:nth-child(2) {
 			display: flex;
 			flex-wrap: nowrap;
-			gap: 6rem;
+			gap: 1.6rem;
 			// width: 65rem;
 
 			> div {
 				// width: 100%;
+				width: 13.3rem;
 				height: 100%;
-				// margin: 1.6rem;
 				cursor: pointer;
 
 				> a {
@@ -123,61 +128,63 @@ const HeaderContainer = styled.header`
 `;
 
 const Dropdown = styled.div` 
-		position: absolute;
-		background: rgba(0, 0, 0, 0.55);
-		width: 100%;
-		box-shadow: 0px 0.8rem 1rem 0px rgba(0, 0, 0, 0.2);
-		z-index: 1;
-		top: 9rem;
-		color: white;
-		// transform: translateX(-0%);
-		height: 13rem;
-		display: flex;
-		justify-content: center;
+position: absolute;
+background: rgba(0, 0, 0, 0.55);
+width: 100%;
+box-shadow: 0px 0.8rem 1rem 0px rgba(0, 0, 0, 0.2);
+z-index: 1;
+top: 9rem;
+color: white;
+// transform: translateX(-0%);
+height: 13rem;
+display: flex;
+justify-content: center;
 
-		> div {
-			width: 120rem;
-			height: 13rem;
-			display: flex;
-			justify-content: flex-end;
+> div {
+    width: 120rem;
+    height: 13rem;
+    display: flex;
+    justify-content: flex-end;
 
-			> div {
-				display: flex;
-				width: 56rem;
-				gap: 8rem;
-				position: absolute;
-				padding: 1.6rem 0rem;
-				justify-content: center;
+    > div {
+        display: flex;
+        width: 58rem;
+        gap: 1.6rem;
+        position: absolute;
+        padding: 1.6rem 0rem;
+        justify-content: center;
 
-				> div {
-					display: flex;
-					flex-direction: column;
-					position: relative;
-					align-items: center;
-					gap: 1rem;
-					// width: 13rem;
-					
-					> 	div: last-child {
-						position: absolute;
-						right: 0rem;
-						transform: translatex(4rem);
-						width: 0.05rem; 
-						height: 10rem;
-						background-color: white; 
-					}
+        > div {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            align-items: center;
+            gap: 1rem;
+            width: 13rem;
+                    
+                    >   div: last-child {
+                        position: absolute;
+                        right: 3rem;
+                        transform: translatex(4rem);
+                        width: 0.05rem; 
+                        height: 10rem;
+                        background-color: white; 
+                    }
 
-					> a {
-						color: white;
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						line-height: 1.7rem;
-						${Fonts.medium14};
-					}					
-					}
-				}
-			}
-		}
+                    > a {
+                        color: white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        line-height: 1.7rem;
+                        ${Fonts.medium14};
+                    }                   
+                }
+            }
+        }
+    }
 `;
+
+
 
 export default Header;
