@@ -34,7 +34,6 @@ const ProfessorInfo = ({ name, title, phone, email, Home, description, image }) 
 
 const ProfessorCard = styled.div`
 
-
 				> div {
 					width: 58rem;
 					// height: 30rem;
@@ -52,7 +51,6 @@ const ProfessorCard = styled.div`
 					> div:first-child {
 						width: 20rem;
 						height: 23rem;
-						// background-color: skyblue;
 
 						> img {
 							width: 100%;
@@ -106,13 +104,11 @@ const ProfessorCard = styled.div`
 						align-items: center;
 						padding: 1rem 2rem;
 						line-height: normal;
-						// color: gray;
 					}
 				}
 
 				> div:nth-child(2) {
 					background: #e4e9f0;
-					// padding: 1rem 2rem;
 					line-height: normal;
 				}
 			}
