@@ -94,9 +94,60 @@ function MemberPage() {
 								/>
 							))}
 						</div>
-						<CategoryTitle maintitle={titles[1].maintitle} subtitle={titles[1].subtitle} />
-
-						<CategoryTitle maintitle={titles[2].maintitle} subtitle={titles[2].subtitle} />
+						<div>
+							<CategoryTitle maintitle={titles[1].maintitle} subtitle={titles[1].subtitle} />
+							<table>
+								<thead>
+									<tr>
+										<th>이름</th>
+										<th>직위</th>
+										<th>전공</th>
+										<th>연락처</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th>임주원</th>
+										<th>연구 교수/ 실무자</th>
+										<th>웰니스융합인재 연구팀</th>
+										<th>jwlim11@yonsei.ac.kr/ 02-2123-3570</th>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div>
+							<CategoryTitle maintitle={titles[2].maintitle} subtitle={titles[2].subtitle} />
+							<table>
+								<thead>
+									<tr>
+										<th>학기</th>
+										<th>명단</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th>2020-2</th>
+										<th>참여대학원생 명단</th>
+									</tr>
+									<tr>
+										<th>2021-1</th>
+										<th>참여대학원생 명단</th>
+									</tr>
+									<tr>
+										<th>2021-2</th>
+										<th>참여대학원생 명단</th>
+									</tr>
+									<tr>
+										<th>2022-1</th>
+										<th>참여대학원생 명단</th>
+									</tr>
+									<tr>
+										<th>2022-2</th>
+										<th>참여대학원생 명단</th>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</MemberContainer>
@@ -108,7 +159,7 @@ const Member = styled.div``;
 
 const MemberContainer = styled.div`
 	padding: 5rem;
-	height: 150rem;
+	// height: 150rem;
 	display: flex;
 	-webkit-box-pack: center;
 	justify-content: center;
@@ -119,77 +170,92 @@ const MemberContainer = styled.div`
 		flex-direction: column;
 		align-items: center;
 
-		> div {
+		> div:first-child {
+			width: 100%;
+			gap: 3.5rem;
+			display: flex;
+			flex-direction: column;
 
 			> div:nth-child(2) {
 				display: grid;
 				grid-template-columns: repeat(2, 1fr);
 				grid-template-rows: repeat(2, 1fr);
 				gap: 3rem;
+				padding: 5rem 0rem;
+				line-height: normal;
+			}
 
-				// > div:first-child {
-				// 	width: 58rem;
-				// 	height: 30rem;
-				// 	display: flex;
-				// 	flex-direction: row;
-				// 	-webkit-box-pack: center;
-				// 	-webkit-box-align: center;
-				// 	${Fonts.bold12}
-				// 	box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.10);
-				// 	align-items: stretch;
-				// 	// align-content: center;
-				// 	flex-wrap: wrap;
-				// 	justify-content: space-around;
+			> div:nth-child(3) {
+				gap: 1rem;
+				display: flex;
+				flex-direction: column;
 
-				// 	> div:first-child {
-				// 		width: 20rem;
+				> table {
+					width: 100%;
+					> thead {
+						width: 100%;
+						background: ${Colors.gray};
+						height: 6rem;
+						text-align: center;
 
-				// 		background-color: skyblue;
-				// 	}
+						> tr {
+							> th {
+								${Fonts.bold24}
+								width: 10rem;
+								line-height: normal;
+								vertical-align: middle;
+							}
+						}
+					}
 
-				// 	> div:nth-child(2) {
-				// 		width: 32.5rem;
-				// 		height: 23rem;
-				// 		gap: 2rem;
-				// 		background-color: pink;
-				// 		display: flex;
-				// 		justify-content: center;
-				// 		flex-direction: column;
-				// 		padding: 2rem;
+					> tbody {
+						width: 100%;
+						border-bottom: 1px solid ${Colors.gray};
+						height: 5rem;
+						text-align: center;
 
-				// 		> div:first-child {
-				// 		}
-
-				// 		> div:nth-child(2) {
-				// 		}
-
-				// 		> div:nth-child(3) {
-				// 			display: flex;
-				// 			gap: 1.5rem;
-				// 			align-items: center;
-				// 		}
-
-				// 		> div:nth-child(4) {
-				// 			display: flex;
-				// 			gap: 1.5rem;
-				// 			align-items: center;
-				// 		}
-				// 	}
-
-					// > div:nth-child(4) {
-					// 	// background-color: ${Colors.gray};
-					// 	height: 7rem;
-					// 	align-items: center;
-					// 	padding: 1rem 2rem;
-					// 	line-height: normal;
-					// 	// color: gray;
-					// }
+						> tr {
+							> th {
+								${Fonts.regular18}
+								line-height: normal;
+								height: 100%;
+								vertical-align: middle;
+							}
+						}
+					}
 				}
+			}
+			> div:nth-child(4) {
+				> table {
+					width: 100%;
+					> thead {
+						width: 100%;
+						background: ${Colors.gray};
+						height: 6rem;
+						text-align: center;
 
-				> div:nth-child(2) {
-					// background: #e4e9f0;
-					padding: 5rem 0rem;
-					line-height: normal;
+						> tr {
+							> th {
+								${Fonts.bold16}
+								line-height: normal;
+								vertical-align: middle;
+							}
+						}
+					}
+
+					> tbody {
+						width: 100%;
+						height: 25rem;
+						text-align: center;
+
+						> tr {
+							border-bottom: 1px solid ${Colors.gray150};
+							> th {
+								vertical-align: middle;
+								${Fonts.regular16}
+							}
+						}
+					}
 				}
 			}
 		}
