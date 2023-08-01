@@ -71,7 +71,7 @@ const MemberBackground = styled.div`
 				text-align: center;
 	
 				> div: first-child {
-					background-color: #355E99;
+					background-color: ${Colors.blue600};
 					
 				}
 	
@@ -92,7 +92,6 @@ const MemberBackground = styled.div`
 				}
 			}
 		}
-
 	}
 `;
 

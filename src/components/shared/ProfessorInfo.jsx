@@ -67,7 +67,7 @@ const ProfessorCard = styled.div`
 						display: flex;
 						justify-content: center;
 						flex-direction: column;
-						padding: 2rem;
+						padding: 4rem 2rem;
 
 						> div:first-child {
 							${Fonts.bold18}
@@ -108,7 +108,7 @@ const ProfessorCard = styled.div`
 				}
 
 				> div:nth-child(2) {
-					background: #e4e9f0;
+					background-color: ${Colors.gray};
 					line-height: normal;
 				}
 			}
