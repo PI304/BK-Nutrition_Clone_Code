@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Fonts from '../../../styles/fonts';
@@ -17,6 +17,9 @@ import Footer from '../../shared/Footer';
 import CarouselBtn from '../../../styles/svg';
 
 function MainPage() {
+	const carouselRef = useRef(null);
+	const [currentSlide, setCurrentSlide] = useState(0);
+
 	const carouselImages = [
 		{ id: 1, image: engLogo, alt: 'eng-logo' },
 		{ id: 2, image: footerLogo1, alt: 'footer-1' },
@@ -25,19 +28,20 @@ function MainPage() {
 	];
 
 	const TOTAL_SLIDES = carouselImages.length;
-	const [currentSlide, setCurrentSlide] = useState(0);
 
 	const goToNextSlide = () => {
 		setCurrentSlide((prevSlide) => (prevSlide + 1) % TOTAL_SLIDES);
 	};
 
 	const goToPrevSlide = () => {
-		setCurrentSlide(
-      (prevSlide) => (prevSlide - 1 + TOTAL_SLIDES) % TOTAL_SLIDES);
+		setCurrentSlide((prevSlide) => (prevSlide - 1 + TOTAL_SLIDES) % TOTAL_SLIDES);
 	};
-  
-	const preparedCarouselImages = [...carouselImages, ...carouselImages, ...carouselImages];
 
+	const preparedCarouselImages = [
+		...carouselImages.map((item) => ({ ...item, id: `prepared_${item.id}` })),
+		...carouselImages.map((item) => ({ ...item, id: `prepared_${item.id}_1` })),
+		...carouselImages.map((item) => ({ ...item, id: `prepared_${item.id}_2` })),
+	];
 	return (
 		<Main>
 			<MainBackground>
@@ -79,7 +83,7 @@ function MainPage() {
 						<div>
 							<div style={{ transform: `translate(-${currentSlide * 36}rem, 0)` }}>
 								{preparedCarouselImages.map((item, index) => (
-									<ImageWrapper key={item.alt}>
+									<ImageWrapper key={item.id}>
 										<Link to={Paths.intro}>
 											<img
 												src={item.image}
@@ -228,7 +232,7 @@ const Carousel = styled.div`
 		> div: nth-child(2) {
 			width: 104rem;
 			position: relative;
-      display: flex;
+			display: flex;
 			justify-content: center;
 			align-items: center;
 			gap: 2rem;
@@ -276,7 +280,7 @@ const Carousel = styled.div`
 				right: 0rem;
 			}
 		}
-  }
+}
 
 		> div: last-child {
 			padding: 2rem;
