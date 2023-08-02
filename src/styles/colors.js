@@ -50,4 +50,13 @@ export default class Colors {
 	/* line */
 
 	static line = '#F3F3F3';
+
+	/* table */
+
+	static table1 = '#E4E9F0';
+
+	static table2 = '#0058A5';
+
+	/* select */
+	static select = '#767676';
 }
