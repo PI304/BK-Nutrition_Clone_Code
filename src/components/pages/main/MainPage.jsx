@@ -37,11 +37,45 @@ function MainPage() {
 		setCurrentSlide((prevSlide) => (prevSlide - 1 + TOTAL_SLIDES) % TOTAL_SLIDES);
 	};
 
-	const preparedCarouselImages = [
-		...carouselImages.map((item) => ({ ...item, id: `prepared_${item.id}` })),
-		...carouselImages.map((item) => ({ ...item, id: `prepared_${item.id}_1` })),
-		...carouselImages.map((item) => ({ ...item, id: `prepared_${item.id}_2` })),
+	// const preparedCarouselImages = [
+	// 	...carouselImages.map((item) => ({ ...item, id: `prepared_${item.id}` })),
+	// 	...carouselImages.map((item) => ({ ...item, id: `prepared_${item.id}_1` })),
+	// 	...carouselImages.map((item) => ({ ...item, id: `prepared_${item.id}_2` })),
+	// ];
+
+	const path = [
+		{
+			id: '1',
+			name: '연세대학교 식품영양학과',
+			link: 'https://www.yonsei.ac.kr/sc/index.jsp',
+		},
+		{
+			id: '2',
+			name: '연세대학교',
+			link: 'https://che.yonsei.ac.kr/che/departments/food_intro.do',
+		},
+		{
+			id: '3',
+			name: '연세대학교 연구처',
+			link: 'https://research.yonsei.ac.kr/research/index.do',
+		},
+		{
+			id: '4',
+			name: 'BrainKorea21 FOUR',
+			link: 'https://bk21four.nrf.re.kr/',
+		},
 	];
+
+	const preparedCarouselImages = carouselImages.map((item) => ({
+		...item,
+		id: `prepared_${item.id}`,
+		link: path.find((p) => p.id === item.id)?.link,
+	}));
+
+	const repeatedCarouselImages = preparedCarouselImages.concat(preparedCarouselImages);
+
+	const currentImage = repeatedCarouselImages[currentSlide];
+
 	return (
 		<Main>
 			<MainBackground>
@@ -81,10 +115,10 @@ function MainPage() {
 					</button>
 					<div>
 						<div>
-							<div style={{ transform: `translate(-${currentSlide * 36}rem, 0)` }}>
+							<div style={{ transform: `translate(-${currentSlide * 37}rem, 0)` }}>
 								{preparedCarouselImages.map((item, index) => (
 									<ImageWrapper key={item.id}>
-										<Link to={Paths.intro}>
+										<Link to={path[index].link}>
 											<img
 												src={item.image}
 												alt={item.alt}
