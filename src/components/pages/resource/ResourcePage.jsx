@@ -7,60 +7,68 @@ import PrevButton from '../../../assets/notice-prev-button.png';
 import NextButton from '../../../assets/notice-next-button.png';
 import DoubleNextButton from '../../../assets/notice-double-next-button.png';
 import Paths from '../../../constant/path';
+import Background from '../../shared/Background';
 
 function ResourcePage() {
 	return (
-		<ResourceLayout>
-			<SelectContainer>
-				<div>
+		<ResourceSection>
+			<Background pageId='7' />
+			<ResourceLayout>
+				<SelectContainer>
 					<div>
-						<Link to={Paths.notice}>공지사항</Link>
+						<div>
+							<Link to={Paths.notice}>공지사항</Link>
+						</div>
+						<div>
+							<Link to={Paths.resource}>자료실</Link>
+						</div>
 					</div>
+					<select>
+						<option>최신순 정렬</option>
+					</select>
+				</SelectContainer>
+				<ResourceTable>
+					<thead>
+						<tr>
+							<th>번호</th>
+							<th>제목</th>
+							<th>작성자</th>
+							<th>날짜</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+								incididunt ut labo
+							</td>
+							<td>관리자</td>
+							<td>2022-00-00</td>
+						</tr>
+					</tbody>
+				</ResourceTable>
+				<ResourceBar>
+					<img src={DoublePrevButton} alt='DoublePrevButton' />
+					<img src={PrevButton} alt='PrevButton' />
 					<div>
-						<Link to={Paths.resource}>자료실</Link>
+						<div>1</div>
+						<div>2</div>
+						<div>3</div>
 					</div>
-				</div>
-				<select>
-					<option>최신순 정렬</option>
-				</select>
-			</SelectContainer>
-			<ResourceTable>
-				<thead>
-					<tr>
-						<th>번호</th>
-						<th>제목</th>
-						<th>작성자</th>
-						<th>날짜</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>1</td>
-						<td>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-							incididunt ut labo
-						</td>
-						<td>관리자</td>
-						<td>2022-00-00</td>
-					</tr>
-				</tbody>
-			</ResourceTable>
-			<ResourceBar>
-				<img src={DoublePrevButton} alt='DoublePrevButton' />
-				<img src={PrevButton} alt='PrevButton' />
-				<div>
-					<div>1</div>
-					<div>2</div>
-					<div>3</div>
-				</div>
-				<img src={NextButton} alt='NextButton' />
-				<img src={DoubleNextButton} alt='DoubleNextButton' />
-			</ResourceBar>
-		</ResourceLayout>
+					<img src={NextButton} alt='NextButton' />
+					<img src={DoubleNextButton} alt='DoubleNextButton' />
+				</ResourceBar>
+			</ResourceLayout>
+		</ResourceSection>
 	);
 }
 
-const ResourceLayout = styled.section`
+const ResourceSection = styled.section`
+	width: 100%;
+`;
+
+const ResourceLayout = styled.div`
 	margin: 5rem auto;
 	width: 120rem;
 `;
