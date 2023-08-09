@@ -22,7 +22,7 @@ function MemberPage() {
 			phone: '02-2123-3126',
 			email: 'msryu@yonsei.ac.kr',
 			description:
-				'연세대학교 식품영양학과 영양유전학 중개연구실 교수 혈액, 신경세포 발달 중 영양소 및 관련 유전자의 기능 분석',
+				'연세대학교 식품영양학과 영양유전학 중개연구실 교수 \n 혈액 신경세포 발달 중 영양소 및 관련 유전자의 기능 분석',
 			image: professorRyu,
 		},
 		{
@@ -33,7 +33,7 @@ function MemberPage() {
 			email: 'tspark@yonsei.ac.kr',
 			image: professorPark,
 			description:
-				'연세대학교 생활과학대학 식품영양학과 교수/ 영양학, 분자영양학 전공 타우린의 생리활성, 기능성식품소재의 생리활성 평가 및 작용기작 규명',
+				'연세대학교 생활과학대학 식품영양학과 교수  \n 영양학, 분자영양학 전공 타우린의 생리활성, 기능성식품소재의 생리활성 평가 및 작용기작 규명',
 		},
 		{
 			id: '3',
@@ -43,7 +43,7 @@ function MemberPage() {
 			email: 'leeseungmin@yonsei.ac.kr',
 			image: professorLee,
 			description:
-				'연세대학교 생활과학대학 식품영양학과 전임교원 식품기능유전체연구실 암세포생물학, 영양생리학, 생화학, 세포생물학, 무기질영양 전공',
+				'연세대학교 생활과학대학 식품영양학과 전임교원  \n 식품기능유전체연구실 암세포생물학, 영양생리학, 생화학, 세포생물학, 무기질영양 전공',
 		},
 		{
 			id: '4',
@@ -52,7 +52,7 @@ function MemberPage() {
 			phone: '02-2123-3119',
 			email: 'm.kim@yonsei.ac.kr',
 			image: professorKim,
-			description: '연세대학교 생활과학대학 식품영양학과 교수  식품분자미생물학 전공 ',
+			description: '연세대학교 생활과학대학 식품영양학과 교수  \n 식품분자미생물학 전공 ',
 		},
 	];
 
@@ -76,7 +76,7 @@ function MemberPage() {
 
 	return (
 		<Member>
-			<Background />
+			<Background pageId='2' />
 			<MemberContainer>
 				<div>
 					<div>
@@ -180,8 +180,8 @@ const MemberContainer = styled.div`
 				display: grid;
 				grid-template-columns: repeat(2, 1fr);
 				grid-template-rows: repeat(2, 1fr);
-				gap: 3rem;
-				padding: 5rem 0rem;
+				gap: 4rem;
+				// padding: 5rem 0rem;
 				line-height: normal;
 			}
 
@@ -226,6 +226,9 @@ const MemberContainer = styled.div`
 				}
 			}
 			> div:nth-child(4) {
+				gap: 1rem;
+				display: flex;
+				flex-direction: column;
 				> table {
 					width: 100%;
 					> thead {

@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import Paths from '../../constant/path';
 import Fonts from '../../styles/fonts';
 import Colors from '../../styles/colors';
 import memberEmail from '../../assets/member-email.png';
@@ -25,7 +27,9 @@ const ProfessorInfo = ({ name, title, phone, email, Home, description, image }) 
 				</div>
 			</div>
 			<div>
-				<img src={memberHome} alt='member-home' />
+				<Link to={Paths.member}>
+					<img src={memberHome} alt='member-home' />
+				</Link>
 			</div>
 			<div>{description}</div>
 		</div>
@@ -81,8 +85,15 @@ const ProfessorCard = styled.div`
 							display: flex;
 							gap: 1.5rem;
 							align-items: center;
+
+
 							> div {
-								${Fonts.medium16}
+								${Fonts.medium16}	
+							}
+
+							> img {
+								width: 3rem;
+								height: 2.37rem;
 							}
 						}
 
@@ -93,6 +104,11 @@ const ProfessorCard = styled.div`
 							
 							> div {
 								${Fonts.medium16}
+							}
+
+							> img {
+								width: 3rem;
+								height: 2.37rem;
 							}
 						}
 					}
